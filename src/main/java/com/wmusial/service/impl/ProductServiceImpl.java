@@ -4,9 +4,10 @@ import com.wmusial.dao.ProductDao;
 import com.wmusial.dao.impl.ProductDaoImpl;
 import com.wmusial.model.Product;
 import com.wmusial.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service("productService")
 public class ProductServiceImpl implements ProductService {
 
     private ProductDao productDao;

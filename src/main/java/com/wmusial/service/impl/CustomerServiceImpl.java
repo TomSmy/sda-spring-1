@@ -4,9 +4,11 @@ import com.wmusial.dao.CustomerDao;
 import com.wmusial.dao.impl.CustomerDaoImpl;
 import com.wmusial.model.Customer;
 import com.wmusial.service.CustomerService;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerDao customerDao;

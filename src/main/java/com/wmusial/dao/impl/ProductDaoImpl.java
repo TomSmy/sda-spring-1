@@ -3,11 +3,12 @@ package com.wmusial.dao.impl;
 import com.wmusial.config.DatabaseConfig;
 import com.wmusial.dao.ProductDao;
 import com.wmusial.model.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+@Repository
 public class ProductDaoImpl implements ProductDao {
 
     private DatabaseConfig databaseConfig;

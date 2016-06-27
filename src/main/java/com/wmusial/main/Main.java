@@ -1,5 +1,6 @@
 package com.wmusial.main;
 
+import com.wmusial.config.AppConfig;
 import com.wmusial.model.Customer;
 import com.wmusial.model.Order;
 import com.wmusial.model.Product;
@@ -9,6 +10,7 @@ import com.wmusial.service.ProductService;
 import com.wmusial.service.impl.CustomerServiceImpl;
 import com.wmusial.service.impl.OrderServiceImpl;
 import com.wmusial.service.impl.ProductServiceImpl;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.math.BigDecimal;
@@ -17,7 +19,9 @@ public class Main {
     public static void main(String[] args) {
 
         //obiekt springowy
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        //ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
         CustomerService customerService = applicationContext.getBean("customerService", CustomerService.class);
         ProductService productService = applicationContext.getBean("productService", ProductService.class);
         OrderService orderService = applicationContext.getBean("orderService", OrderService.class);

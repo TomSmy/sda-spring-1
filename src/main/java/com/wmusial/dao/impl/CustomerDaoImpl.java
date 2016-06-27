@@ -3,15 +3,17 @@ package com.wmusial.dao.impl;
 import com.wmusial.config.DatabaseConfig;
 import com.wmusial.dao.CustomerDao;
 import com.wmusial.model.Customer;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+@Repository
 public class CustomerDaoImpl implements CustomerDao {
 
     private DatabaseConfig databaseConfig;
     private List<Customer> customers;
+
 
     public CustomerDaoImpl(DatabaseConfig databaseConfig) {
         this.databaseConfig =  databaseConfig;
