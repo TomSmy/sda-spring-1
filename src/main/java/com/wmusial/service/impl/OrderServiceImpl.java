@@ -8,10 +8,11 @@ import com.wmusial.model.Product;
 import com.wmusial.service.CustomerService;
 import com.wmusial.service.OrderService;
 import com.wmusial.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
-
+@Service("orderService")
 public class OrderServiceImpl implements OrderService {
 
     private OrderDao orderDao;

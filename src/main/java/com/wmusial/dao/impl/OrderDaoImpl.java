@@ -3,11 +3,12 @@ package com.wmusial.dao.impl;
 import com.wmusial.config.DatabaseConfig;
 import com.wmusial.dao.OrderDao;
 import com.wmusial.model.Order;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+@Repository
 public class OrderDaoImpl implements OrderDao {
 
     private DatabaseConfig databaseConfig;
