@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="databaseConfigId" class="com.wmusial.config.DatabaseConfig"></bean>
+    <bean id="customerDao" class="com.wmusial.dao.impl.CustomerDaoImpl">
+        <constructor-arg ref="databaseConfigId"/>
+    </bean>
+    <bean id="orderDao" class="com.wmusial.dao.impl.OrderDaoImpl">
+        <constructor-arg ref="databaseConfigId"/>
+    </bean>
+    <bean id="productDao" class="com.wmusial.dao.impl.ProductDaoImpl">
+        <constructor-arg ref="databaseConfigId"/>
+    </bean>
+    <bean id="productService" class="com.wmusial.service.impl.ProductServiceImpl">
+        <constructor-arg ref="productDao"/>
+    </bean>
+    <bean id="customerService" class="com.wmusial.service.impl.CustomerServiceImpl">
+        <constructor-arg ref="customerDao"/>
+    </bean>
+    <bean id="orderService" class="com.wmusial.service.impl.OrderServiceImpl">
+        <constructor-arg ref="customerService"/>
+        <constructor-arg ref="productService"/>
+        <constructor-arg ref="orderDao"/>
+
+    </bean>
+
+
+
+</beans>
